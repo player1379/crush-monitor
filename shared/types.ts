@@ -1,5 +1,5 @@
-import type { MemoryEvent, MemoryUpdate } from "./memory";
-import type { AffinityDimension } from "./affinity";
+import type { MemoryEvent, MemoryUpdate } from "./memory.js";
+import type { AffinityDimension } from "./affinity.js";
 export type Relation = "crush" | "new" | "couple";
 export type Message = {
   id: string;

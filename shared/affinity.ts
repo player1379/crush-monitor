@@ -1,4 +1,4 @@
-import type { Judgment } from "./types";
+import type { Judgment } from "./types.js";
 export const AFFINITY_DIMENSIONS = [
   {
     key: "initiative",

@@ -1,5 +1,5 @@
-import { MAX_MESSAGES, MAX_TEXT_CHARS } from "./limits";
-import type { Message, Parsed } from "./types";
+import { MAX_MESSAGES, MAX_TEXT_CHARS } from "./limits.js";
+import type { Message, Parsed } from "./types.js";
 const time =
   "(?:\\d{4}[-/]\\d{1,2}[-/]\\d{1,2}\\s+)?\\d{1,2}:\\d{2}(?::\\d{2})?";
 const header = new RegExp(`^(.{1,40}?)\\s+(${time})$`);

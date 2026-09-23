@@ -1,10 +1,10 @@
-import { EVENT_KINDS } from "../shared/memory";
-import { AFFINITY_DIMENSIONS, composeAffinity } from "../shared/affinity";
-import { MAX_MESSAGES, MAX_TEXT_CHARS } from "../shared/limits";
-import { INTENTS } from "../shared/intents";
-import { EMOTIONS } from "../shared/labels";
+import { EVENT_KINDS } from "../shared/memory.js";
+import { AFFINITY_DIMENSIONS, composeAffinity } from "../shared/affinity.js";
+import { MAX_MESSAGES, MAX_TEXT_CHARS } from "../shared/limits.js";
+import { INTENTS } from "../shared/intents.js";
+import { EMOTIONS } from "../shared/labels.js";
 import { choice, score, noul, type Questions } from "@typesafe-ai/sdk";
-import { evaluate } from "./provider";
+import { evaluate } from "./provider.js";
 import { createHash } from "node:crypto";
 import { z } from "zod";
 import {
@@ -14,14 +14,14 @@ import {
   requestContextKey,
   type AnalysisRequest,
   type AnalysisResponse,
-} from "../shared/types";
+} from "../shared/types.js";
 import {
   judgment,
   actionResult,
   safeStage,
   choiceAnswer,
   noulAnswer,
-} from "../shared/rules";
+} from "../shared/rules.js";
 export const requestSchema = z
   .object({
     memory: z

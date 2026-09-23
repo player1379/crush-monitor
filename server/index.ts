@@ -1,8 +1,8 @@
 import express from "express";
 import { fileURLToPath } from "node:url";
 import { join, dirname } from "node:path";
-import app from "./app";
-import { providerStatus } from "./provider-config";
+import app from "./app.js";
+import { providerStatus } from "./provider-config.js";
 
 const dist = join(dirname(fileURLToPath(import.meta.url)), "../dist");
 app.use(express.static(dist));

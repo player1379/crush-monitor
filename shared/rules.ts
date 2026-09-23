@@ -1,4 +1,4 @@
-import { ACTIONS, STAGES, TONES, type Judgment } from "./types";
+import { ACTIONS, STAGES, TONES, type Judgment } from "./types.js";
 import { z } from "zod";
 export const scoreAnswer = z.object({
   type: z.literal("score"),

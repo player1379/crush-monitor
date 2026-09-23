@@ -1,4 +1,4 @@
-import type { Message, LineResult, AnalysisRequest } from "./types";
+import type { Message, LineResult, AnalysisRequest } from "./types.js";
 export const EVENT_KINDS = {
   boundary:
     "明确提出保持距离、只做朋友、拒绝追求或停止联系的边界，不是暂时忙碌",

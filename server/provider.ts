@@ -1,7 +1,7 @@
 import type { Questions, SystemOneRequest } from "@typesafe-ai/sdk";
 import { setTimeout as delay } from "node:timers/promises";
 import { z } from "zod";
-import { getProviderConfig, type ProviderConfig } from "./provider-config";
+import { getProviderConfig, type ProviderConfig } from "./provider-config.js";
 
 const probability = z.number().min(0).max(1);
 const distribution = z.record(probability);

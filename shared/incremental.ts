@@ -1,5 +1,10 @@
-import { boundedContext, relevantEvents, type MemoryEvent } from "./memory";
-import type { Message, Relation, LineResult, AnalysisRequest } from "./types";
+import { boundedContext, relevantEvents, type MemoryEvent } from "./memory.js";
+import type {
+  Message,
+  Relation,
+  LineResult,
+  AnalysisRequest,
+} from "./types.js";
 export function incrementalJobs(
   messages: Message[],
   relation: Relation,

@@ -1,8 +1,8 @@
 import "dotenv/config";
 import express from "express";
-import { analyze, requestSchema } from "./analysis";
-import { providerStatus, ConfigurationError } from "./provider-config";
-import { ProviderError, providerErrorMessage } from "./provider";
+import { analyze, requestSchema } from "./analysis.js";
+import { providerStatus, ConfigurationError } from "./provider-config.js";
+import { ProviderError, providerErrorMessage } from "./provider.js";
 const app = express();
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
