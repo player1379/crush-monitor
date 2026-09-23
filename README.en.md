@@ -73,6 +73,14 @@ Allowed providers: `typesafe`, `vercel`, `openrouter`. The key must belong to th
 
 Run `npm run check:api` to retry the connection test. For 401, check the key; 402, credits; 403, model permissions; 429, rate limits. For network errors, check connectivity to the selected provider. Setup reports saved configuration and successful verification separately.
 
+## Deploy to Vercel
+
+Import the repository into Vercel, select **Vite**, use `npm run build` as the build command, and set the output directory to `dist`. The root `api/analyze.ts` and `api/health.ts` files deploy as server-side functions.
+
+In **Settings → Environment Variables**, set `JEV_PROVIDER` and `JEV_API_KEY` to the same values described above. Select Production and any Preview environments you use, save, then redeploy. Keep the key in server-side environment variables; do not use a `VITE_` prefix or commit `.env`.
+
+After deployment, open `/api/health`. `configured: true` confirms that the server read the configuration, but does not verify the key with the provider. Then run one analysis in the website to check `/api/analyze`. If Vercel Deployment Protection is enabled, pass its access screen before calling the API.
+
 ## Usage
 
 1. Copy your conversation, or open a text export and copy its contents. Paste into the input field.

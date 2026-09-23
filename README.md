@@ -71,6 +71,14 @@ JEV_API_KEY=你的平台Key
 
 连接检测失败时，运行 `npm run check:api` 重试。401 检查 Key，402 检查额度，403 检查模型权限，429 等待限流恢复。网络错误需要检查本机到对应平台的连接。配置向导保存成功与连接检测通过会分开提示。
 
+## 部署到 Vercel
+
+将仓库导入 Vercel，框架选择 **Vite**，构建命令使用 `npm run build`，输出目录使用 `dist`。项目根目录的 `api/analyze.ts` 和 `api/health.ts` 会发布为服务端接口。
+
+在项目的 **Settings → Environment Variables** 中设置 `JEV_PROVIDER` 和 `JEV_API_KEY`，值与上文手动配置相同。选择部署环境（Production 和需要的 Preview），保存后重新部署。Key 只放在服务端环境变量中，不要使用 `VITE_` 前缀，也不要把 `.env` 上传到仓库。
+
+部署后打开 `/api/health`：`configured: true` 表示服务端已读取配置，但不代表 Key 已经通过平台验证。然后在网页中进行一次分析以确认 `/api/analyze` 可用。如果网站启用了 Vercel 部署保护，浏览器需要先通过保护页才能访问接口。
+
 ## 怎么用
 
 1. 复制聊天记录，或打开导出的文本文件，将内容粘贴到网页输入框。
